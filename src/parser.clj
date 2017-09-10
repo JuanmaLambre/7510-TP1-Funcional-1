@@ -20,15 +20,31 @@
   ]
 )
 
+(defn validFact [fact]
+  (not (nil? (re-matches #"^[a-z0-9]+\([a-z0-9,]+\)$" fact)))
+)
+
+(defn assertFacts [facts]
+  (if 
+    (every?
+      true?
+      (map validFact facts)
+    )
+    facts
+  )
+)
+
 (defn parseFacts [data]
-  (map 
-    clean 
-    (filter
-      #(and 
-        (not (.contains % ":-"))
-        (not (str/blank? %))
+  (assertFacts
+    (map 
+      clean 
+      (filter
+        #(and 
+          (not (.contains % ":-"))
+          (not (str/blank? %))
+        )
+        (str/split data #"\.")
       )
-      (str/split data #"\.")
     )
   )
 )

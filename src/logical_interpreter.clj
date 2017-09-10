@@ -1,5 +1,8 @@
 (ns logical-interpreter
-  (:require [parser :refer :all])
+  (:require 
+    [parser]
+    [drknow]
+  )
 )
 
 (defn evaluate-query
@@ -7,9 +10,8 @@
   either input can't be parsed, returns nil"
   [data query]
 
-  (def facts (parseFacts data))
-  (def rules (parseRules data))
+  (def facts (parser/parseFacts data))
+  (def rules (parser/parseRules data))
 
-  
-
-  nil)
+  (drknow/ask (parser/clean query) facts rules)
+)
