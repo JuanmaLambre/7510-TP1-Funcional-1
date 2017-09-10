@@ -1,26 +1,7 @@
-# funcional-template
+# 75.10 Técnicas de Diseño
+## TP1: Funcional
 
-A Clojure library designed to be used as a template for each exercise/tp used in Tecnicas de Diseño.
+[Enunciado](https://github.com/7510-tecnicas-de-disenio/material-clases/raw/master/TPs/2017-2C%20-%20TP-1%20-%20Interprete.pdf)
 
-## Usage
+`lein test` para correr los tests
 
-<Complete this section>
-
-## License
-
-Copyright © 2017
-
-Distributed under the Eclipse Public License either version 1.0 or (at
-your option) any later version.
-
-## Tutorial
-https://8thlight.com/blog/colin-jones/2010/11/26/a-leiningen-tutorial.html
-
-## Install leiningen
-https://github.com/technomancy/leiningen
-
-## Run Tests
-lein test
-
-## Run Repl
-lein repl
